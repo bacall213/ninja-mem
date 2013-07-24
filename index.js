@@ -4,18 +4,19 @@ var Device = require('./lib/device')
   , configHandlers = require('./lib/config-handlers');
 
 // Give our driver a stream interface
-util.inherits(cpuDriver,stream);
+util.inherits(memDriver,stream);
 
-// Option for poll interval and enable/disable
-// poll_interval: 1000 = 1 second
-var poll_interval = '5000';
+// Poll interval default (in seconds) (converted to milliseconds in device.js)
+var default_poll_interval = 5;
+
+// Enable/disable driver
 var enabled = true;
 
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
   "contents": [
-    { "type": "heading",      "text": "Ninja CPU Driver Loaded" },
-    { "type": "paragraph",    "text": "The Ninja CPU  driver has been loaded. You should not see this message again." }
+    { "type": "heading",      "text": "Ninja RAM Driver Loaded" },
+    { "type": "paragraph",    "text": "The Ninja RAM driver has been loaded. You should not see this message again." }
   ]
 };
 
@@ -33,7 +34,7 @@ var HELLO_WORLD_ANNOUNCEMENT = {
  * @fires register - Emit this when you wish to register a device (see Device)
  * @fires config - Emit this when you wish to send config data back to the Ninja Platform
  */
-function cpuDriver(opts,app) {
+function memDriver(opts,app) {
 
   var self = this;
   this.opts = opts;
@@ -49,6 +50,7 @@ function cpuDriver(opts,app) {
       if (!opts.hasSentAnnouncement) {
         self.emit('announcement',HELLO_WORLD_ANNOUNCEMENT);
         opts.hasSentAnnouncement = true;
+        opts.poll_interval = default_poll_interval;
         self.save();
       }
 
@@ -70,7 +72,7 @@ function cpuDriver(opts,app) {
  */
 
 
-cpuDriver.prototype.config = function(rpc,cb) {
+memDriver.prototype.config = function(rpc,cb) {
 
   var self = this;
 
@@ -90,4 +92,4 @@ cpuDriver.prototype.config = function(rpc,cb) {
 
 
 // Export it
-module.exports = cpuDriver;
+module.exports = memDriver;

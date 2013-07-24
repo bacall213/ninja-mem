@@ -10,8 +10,8 @@ License: BSD
 ### Step 1 - Fetch the driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
-git clone https://github.com/bacall213/ninja-cpu.git
-cd ninja-cpu
+git clone https://github.com/bacall213/ninja-mem.git
+cd ninja-mem
 npm install
 ```
 
@@ -24,5 +24,4 @@ sudo service ninjablock restart
 
 ## Notes
 - Install instructions have not been checked
-- CPU monitoring code based on Ninja Blocks CPU monitor tutorial
-- Other code examples borrowed from ninja-diskspace
+- Free memory grabbed from /proc/meminfo and divided by 1000 to get MB
