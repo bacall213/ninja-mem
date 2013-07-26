@@ -1,4 +1,4 @@
-Ninja CPU Monitor
+Ninja RAM Monitor
 =================
 Author: Brian Call
 Version: 0.0.2
