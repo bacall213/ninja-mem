@@ -1,7 +1,7 @@
 Ninja RAM Monitor
 =================
 Author: Brian Call
-Version: 0.0.2
+Version: 0.0.3
 Status: Stable
 License: BSD
 
@@ -24,4 +24,7 @@ sudo service ninjablock restart
 
 ## Notes
 - Install instructions have not been checked
-- Free memory grabbed from /proc/meminfo and divided by 1000 to get MB
+- Data parsed from the output of the `free` command
+- Formula: (Used / Total) * 100
+- Output is limited by printf to a whole number up to three digits
+- No "max value" checking is performed
