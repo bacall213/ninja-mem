@@ -1,6 +1,6 @@
 {
   "name": "ninja-mem",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Ninja RAM Monitor",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "repository": "https://github.com/bacall213/ninja-mem",
   "author": "bacall213",
-  "license": "BSD"
+  "license": "MIT"
 }
