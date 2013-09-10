@@ -20,9 +20,9 @@ sudo service ninjablock restart
 ```
 
 #### Step 3 (optional) - Stylize your Ninjablocks dashboard\*
-1) Create a new widget
-2) Assign this driver from your list to the widget
-3) Import the GIST at: https://gist.github.com/bacall213/6341813
+1. Create a new widget
+2. Assign this driver from your list to the widget
+3. Import the GIST at: https://gist.github.com/bacall213/6341813
 
 \* As of 9/10/13, the BETA dashboard is required if you want to use the above pre-configured widget.
 
