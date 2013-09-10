@@ -1,6 +1,6 @@
 {
   "name": "ninja-mem",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ninja RAM Monitor",
   "main": "index.js",
   "scripts": {

@@ -1,13 +1,12 @@
 Ninja RAM Monitor
 =================
 Author: Brian Call
-Version: 0.0.4
+Version: 0.0.5
 Status: Stable
 License: MIT
 
-
-## Installation
-### Step 1 - Fetch the driver
+### Installation
+#### Step 1 - Fetch the driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
 git clone https://github.com/bacall213/ninja-mem.git
@@ -15,22 +14,41 @@ cd ninja-mem
 npm install
 ```
 
-
-### Step 2 - Restart the Ninja Block process
+#### Step 2 - Restart the Ninja Block process
 ```
 sudo service ninjablock restart
 ```
 
+#### Step 3 (optional) - Stylize your Ninjablocks dashboard\*
+1) Create a new widget
+2) Assign this driver from your list to the widget
+3) Import the GIST at: https://gist.github.com/bacall213/6341813
 
-## Notes
-- Install instructions have not been checked
+\* As of 9/10/13, the BETA dashboard is required if you want to use the above pre-configured widget.
+
+
+
+### Notes
 - Data parsed from the output of the `free` command
 - Formula: (Used / Total) * 100
 - Output is limited by printf to a whole number up to three digits
 - No "max value" checking is performed
+- With the inclusion of the nodejs module 'os', os.freemem() and os.totalmem() could be used to replace the use of `free`
 
 
-## License
+
+### Change History
+##### 0.0.5
+- Added change history to readme
+- Changed device type from 2000 (sandbox device) to 521 (ninjablock RAM)
+- Cleaned up the code a bit
+- Added require('os') to device.js
+- Using os.hostname() to generate a more descriptive default title, "RAM@<hostname> (% use)." The new title should make it "play nice" with other RAM monitors without needing to update the titles to keep them uniquely idenfiable.
+- Changed the styles in the readme so the headings wouldn't be quite so gigantic.
+
+
+
+### License
 Copyright (c) 2013 Brian Call
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

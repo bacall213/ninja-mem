@@ -15,7 +15,7 @@ var enabled = true;
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
   "contents": [
-    { "type": "heading",      "text": "Ninja RAM Driver Loaded" },
+    { "type": "heading",      "text": "Ninja RAM Monitor Loaded" },
     { "type": "paragraph",    "text": "The Ninja RAM driver has been loaded. You should not see this message again." }
   ]
 };
@@ -70,8 +70,6 @@ function memDriver(opts,app) {
  * @param  {Object}   rpc.params Any input data the user provided
  * @param  {Function} cb      Used to match up requests.
  */
-
-
 memDriver.prototype.config = function(rpc,cb) {
 
   var self = this;
